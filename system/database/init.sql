@@ -2,16 +2,16 @@
 CREATE DATABASE database_name
 GO
 
-CREATE LOGIN hospital WITH PASSWORD = 'hospital_124'
+CREATE LOGIN login WITH PASSWORD = 'password'
 GO
 
 USE database_name;
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'hospital')
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'login')
 BEGIN
-    CREATE USER [hospital] FOR LOGIN [hospital]
-    EXEC sp_addrolemember N'db_owner', N'hospital'
+    CREATE USER [user] FOR LOGIN [login]
+    EXEC sp_addrolemember N'db_owner', N'login'
 END;
 GO
 
